@@ -3,8 +3,9 @@ import json
 
 consumer = KafkaConsumer(
     bootstrap_servers='localhost:29092',
+    api_version=(0, 11, 5),
     value_deserializer=lambda v: json.loads(v.decode('ascii')),
-    auto_offset_reset='latest'
+    auto_offset_reset='earliest'
 )
 
 consumer.subscribe(topics='testnum', )
