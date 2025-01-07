@@ -1,7 +1,7 @@
 # Docker Kafka Python
 
 ## Overview
-Example of running Kafka in DOcker, and a producer and consumer in Python.
+Example of running Kafka in Docker, and a producer and consumer in Python.
 
 ## Implementation
 When the Kafka container is running, run producer.py.  It will publish messages to Kafka.  Run consumer.py.  It will consume the messages.
