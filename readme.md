@@ -4,7 +4,8 @@
 Example of running Kafka in Docker, and a producer and consumer in Python.
 
 ## Implementation
-When the Kafka container is running, run producer.py.  It will publish messages to Kafka.  Run consumer.py.  It will consume the messages.
+When the Kafka container is running, run producer.py.  It will publish messages to Kafka.  
+Running one or both of consumer1.py and consumer2.py will consume the messages.
 
 ## Installation
 
@@ -34,7 +35,11 @@ $ docker-compose up
 $ python producer.py
 ```
 
-## Running the consumer
+## Running the consumers
+
+You can run one or both of the consumers.  The producer publishes to 4 partitions, these will be automatically 
+distributed across the partitions.  When both consumers are running they each consumer 2 partitions. 
+Stopping or starting a consumer will cause the partitions to rebalance to the other consumer.
 
 ```bash
 $ python consumer.py
